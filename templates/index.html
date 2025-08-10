@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="hero">
+    <div class="intro">
+        <h1>مصمم فل ستاك محترف - ياسين اسلام</h1>
+        <p>انا مطور فل ستاك ذو خبره سنتين و اشتغلت علي مشاريع كتير سابقا.</p>
+        <div class="cta">
+        <a class="btn primary" href="#projects">شوف مشاريعي</a>
+        <a class="btn" style="margin-left:10px" href="#contact">تبقى عميل</a>
+        </div>
+    </div>
+
+    <aside class="card profile">
+        <div class="avatar">
+        <img src="{{ url_for('static', filename='images/me.jpg') }}"
+            alt="Profile"
+            onerror="this.src='">
+        </div>
+        <div class="meta">
+        <h3>ياسين إسلام</h3>
+        <span>مطور فل ستاك</span>
+        </div>
+    </aside>
+    </section>
+
+    <section id="projects" class="section">
+    <h2>أبرز المشاريع</h2>
+    <div class="grid">
+        <div class="project card">
+        <img src="{{ url_for('static', filename='images/project.png')}}" alt="Project 1">
+        <div class="proj-meta">
+            <h3>تصميم متجر إلكتروني</h3>
+            <p>متجر الكتروني بسيط</p>
+        </div>
+        </div>
+
+        <div class="project card">
+        <img src="{{ url_for('static', filename='images/project2.png')}}" alt="Project 2">
+        <div class="proj-meta">
+            <h3>لوحة تحكم إدارية</h3>
+            <p>نظام لوحة تحكم مع مخططات وفلترة متقدمة.</p>
+        </div>
+        </div>
+
+        <div class="project card">
+        <img src="{{ url_for('static', filename='images/project3.png')}}" alt="Project 3">
+        <div class="proj-meta">
+            <h3>موقع مترجم</h3>
+            <p>كان الfinal project بتاع cs50 وبصراحه كنت هعمله portofolio في الاول</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section" id="about">
+    <h2>عنّي</h2>
+    <div class="card" style="padding:20px;margin-top:12px">
+        <p style="color:var(--muted);line-height:1.7">انا مطور فل استاك اتعاملت مع لغات برمجه كتير زي python, html, css, js, php و كتير frameworks تانيه زي flask, bootstrap, react بصراحه لسه بتعلم react</p>
+    </div>
+    </section>
+
+    <section id="contact" class="section">
+    <h2>تواصل</h2>
+    <div class="contact">
+        <form class="card" style="padding:18px" method="post" action="{{ url_for('contact') }}">
+            <input name="name" placeholder="اسمك" id="name"/>
+            <input name="email" placeholder="البريد الإلكتروني" id="email"/>
+            <textarea name="message" rows="6" placeholder="محتوى الرسالة" id="message"></textarea>
+            <button class="btn primary" type="submit" id="submit">ارسال</button>
+        </form>
+
+        <div class="card" style="padding:18px">
+        <h3>تفاصيل الاتصال</h3>
+        <p style="color:var(--muted);margin-top:8px">Email: ysssineslamshawqy@gmail.com<br>Phone: +201029196997</p>
+        <div style="margin-top:14px;display:flex;gap:10px">
+            <div style="padding:10px;border-radius:10px;background:var(--glass);font-weight:600">GitHub</div>
+            <div style="padding:10px;border-radius:10px;background:var(--glass);font-weight:600">LinkedIn</div>
+            <div style="padding:10px;border-radius:10px;background:var(--glass);font-weight:600">Behance</div>
+        </div>
+        </div>
+    </div>
+    </section>
+{% endblock %}

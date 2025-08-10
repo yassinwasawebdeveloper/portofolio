@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{% block title %}Yassin Eslam | Full-stack developer{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+        <div class="brand">
+            <div class="logo">YE</div>
+            <div>
+            <div style="font-weight:700">Yassin E.</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">full-stack Developer</div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <a href="#about">عنّي</a>
+            <a href="#projects">مشاريع</a>
+            <a href="#contact">تواصل</a>
+        </nav>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flashes" aria-live="polite">
+            {% for category, text in messages %}
+                <div class="flash {{ category }}">{{ text }}</div>
+            {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+
+        <footer>
+        © 2025 Yassin E. — Yassin Eslam Shawqy
+        </footer>
+    </div>
+    <script src="{{ url_for(static , filename='js/main.js') }}"></script>
+</body>
+</html>
